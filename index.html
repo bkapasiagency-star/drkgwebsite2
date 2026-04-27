@@ -16,24 +16,16 @@
             --ca-saffron: #F48221;
         }
 
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a202c; overflow-x: hidden; }
         .serif { font-family: 'Playfair Display', serif; }
         
+        /* Floating Nav with fixed mobile width */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.08);
             border-radius: 50px;
-            margin-top: 20px;
-        }
-
-        .hero-shape {
-            position: absolute;
-            top: 0; right: 0;
-            width: 40%; height: 100%;
-            background: #f8fafc;
-            z-index: -1;
-            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .service-hover-card {
@@ -42,7 +34,7 @@
         }
         .service-hover-card:hover {
             padding-left: 20px;
-            background-color: #f1f5f9;
+            background-color: #f8fafc;
             border-bottom-color: var(--ca-emerald);
         }
 
@@ -50,28 +42,16 @@
             background: linear-gradient(135deg, var(--ca-blue) 0%, #0d2b3e 100%);
             box-shadow: 0 10px 30px rgba(26, 82, 118, 0.3);
         }
-
-        .founder-frame {
-            position: relative;
-            padding: 20px;
-        }
-        .founder-frame::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100px; height: 100px;
-            border-top: 4px solid var(--ca-emerald);
-            border-left: 4px solid var(--ca-emerald);
-        }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <header class="fixed w-full z-50 px-2 md:px-10">
-        <nav class="nav-glass max-w-7xl mx-auto px-3 md:px-6 h-16 md:h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-2 md:space-x-3">
+    <header class="fixed w-full z-50 px-3 md:px-10 pt-4">
+        <nav class="nav-glass max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2 md:space-x-4 shrink-0">
                 <img src="New-CA-logo.webp" alt="CA Logo" class="h-8 md:h-12 w-auto shrink-0">
-                <span class="text-base md:text-xl font-extrabold text-slate-800 tracking-tighter uppercase whitespace-nowrap">DRKG & CO.</span>
+                <div class="h-6 w-[1px] bg-slate-200 hidden sm:block"></div>
+                <span class="text-sm md:text-xl font-extrabold text-slate-800 tracking-tighter uppercase whitespace-nowrap">DRKG & CO.</span>
             </div>
             
             <div class="hidden lg:flex space-x-8 font-bold text-slate-500 text-xs uppercase tracking-widest">
@@ -81,59 +61,40 @@
                 <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
             </div>
 
-            <a href="tel:+919898089964" class="bg-slate-900 text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-emerald-600 transition shadow-lg shrink-0">
+            <a href="tel:+919898089964" class="bg-slate-900 text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-emerald-600 transition shadow-lg shrink-0 ml-2">
                 Secure Call
             </a>
         </nav>
     </header>
 
-    <section id="home" class="relative min-h-screen flex items-center pt-20">
-        <div class="hero-shape hidden lg:block"></div>
+    <section id="home" class="relative min-h-screen flex items-center pt-24">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             
             <div data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] text-xs mb-4">Established 2013</h2>
-                <h1 class="serif text-6xl lg:text-8xl text-slate-900 leading-tight mb-8">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="h-[2px] w-8 bg-emerald-500"></div>
+                    <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] text-[10px]">Established 2013</h2>
+                </div>
+                <h1 class="serif text-5xl lg:text-8xl text-slate-900 leading-tight mb-8">
                     Modern <span class="text-slate-400 italic">Financial</span> <br>Architecture.
                 </h1>
-                <p class="text-xl text-slate-500 mb-10 max-w-md font-light leading-relaxed">
-                    At DRKG & Co., we don't just audit; we design fiscal strategies that protect and propel your business forward.
+                <p class="text-lg text-slate-500 mb-10 max-w-md font-light leading-relaxed">
+                    At DRKG & Co., we design fiscal strategies that protect and propel your business forward.
                 </p>
-                <div class="flex items-center space-x-6">
-                    <a href="#contact" class="cta-premium text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all">Consultation</a>
-                    <div class="h-12 w-[1px] bg-slate-200"></div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest leading-loose">13+ Years<br>1k+ Clients</p>
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <a href="#contact" class="cta-premium text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest hover:scale-105 transition-all">Consultation</a>
+                    <div class="h-10 w-[1px] bg-slate-200"></div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">13+ Years • 1k+ Clients</p>
                 </div>
             </div>
 
-            <div class="founder-frame" data-aos="zoom-in" data-aos-duration="1200">
-                <img src="komal.jpg" alt="CA Komal Bhavnagari" class="rounded-br-[100px] shadow-2xl h-[600px] w-full object-cover">
-                <div class="absolute -bottom-10 -left-10 bg-white p-8 shadow-xl rounded-2xl max-w-xs border border-slate-100">
-                    <h3 class="serif text-2xl text-slate-900">Komal Bhavnagari</h3>
-                    <p class="text-emerald-600 font-bold text-[10px] uppercase tracking-widest mt-2">Founder • F.C.A. • LL.B.</p>
+            <div class="relative mt-12 lg:mt-0" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="relative p-2 border border-slate-100 rounded-br-[100px]">
+                    <img src="komal.jpg" alt="CA Komal Bhavnagari" class="rounded-br-[100px] shadow-2xl h-[400px] md:h-[600px] w-full object-cover">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-3 gap-16">
-                <div class="lg:col-span-2" data-aos="fade-right">
-                    <h2 class="serif text-5xl text-slate-900 mb-10 leading-snug">Defining excellence across <span class="text-emerald-600 italic">30+ industries.</span></h2>
-                    <p class="text-lg text-slate-500 leading-relaxed max-w-2xl">
-                        DRKG & Co. is a multi-disciplinary practice based in Surat. We specialize in transforming complex regulatory requirements into structured financial growth. Whether it's the precision of a Bank Audit or the strategy of Project Finance, our legacy is built on integrity.
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center space-y-12" data-aos="fade-left">
-                    <div>
-                        <span class="text-4xl font-extrabold text-slate-900">1000+</span>
-                        <p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mt-2">Active Portfolios</p>
-                    </div>
-                    <div>
-                        <span class="text-4xl font-extrabold text-slate-900">100%</span>
-                        <p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mt-2">Compliance Rate</p>
-                    </div>
+                <div class="absolute -bottom-6 md:-bottom-10 -left-4 md:-left-10 bg-white p-6 md:p-8 shadow-2xl rounded-2xl max-w-[240px] md:max-w-xs border border-slate-50">
+                    <h3 class="serif text-xl md:text-2xl text-slate-900">Komal Bhavnagari</h3>
+                    <p class="text-emerald-600 font-bold text-[9px] md:text-[10px] uppercase tracking-widest mt-2">Founder • F.C.A. • LL.B.</p>
                 </div>
             </div>
         </div>
@@ -141,122 +102,79 @@
 
     <section id="services" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
-                <h2 class="serif text-5xl text-slate-900">Our Expertise</h2>
-                <p class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-2">Bespoke Financial Services</p>
+            <div class="flex flex-col mb-20" data-aos="fade-up">
+                <h2 class="serif text-5xl lg:text-6xl text-slate-900 mb-2">Our Expertise</h2>
+                <span class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs">Bespoke Financial Services</span>
+                <div class="h-1 w-20 bg-emerald-500 mt-6"></div>
             </div>
 
             <div class="grid lg:grid-cols-1">
                 <div class="service-hover-card py-10 flex flex-col md:flex-row md:items-center justify-between group" data-aos="fade-up">
-                    <div class="flex items-center space-x-8">
-                        <span class="text-slate-200 group-hover:text-emerald-200 text-4xl font-bold transition">01</span>
-                        <h4 class="text-2xl font-bold text-slate-800">Income Tax Return</h4>
+                    <div class="flex items-center space-x-6 md:space-x-8">
+                        <span class="text-slate-100 group-hover:text-emerald-100 text-4xl md:text-6xl font-bold transition">01</span>
+                        <h4 class="text-xl md:text-2xl font-bold text-slate-800">Income Tax Return</h4>
                     </div>
-                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0">Strategic planning and filing for high-impact individuals and corporates.</p>
+                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0 text-sm md:text-base">Strategic planning and filing for high-impact individuals and corporates.</p>
                 </div>
 
                 <div class="service-hover-card py-10 flex flex-col md:flex-row md:items-center justify-between group" data-aos="fade-up">
-                    <div class="flex items-center space-x-8">
-                        <span class="text-slate-200 group-hover:text-emerald-200 text-4xl font-bold transition">02</span>
-                        <h4 class="text-2xl font-bold text-slate-800">GST Services</h4>
+                    <div class="flex items-center space-x-6 md:space-x-8">
+                        <span class="text-slate-100 group-hover:text-emerald-100 text-4xl md:text-6xl font-bold transition">02</span>
+                        <h4 class="text-xl md:text-2xl font-bold text-slate-800">GST Services</h4>
                     </div>
-                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0">Comprehensive governance, audits, and periodic filing management.</p>
+                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0 text-sm md:text-base">Comprehensive governance, audits, and periodic filing management.</p>
                 </div>
 
                 <div class="service-hover-card py-10 flex flex-col md:flex-row md:items-center justify-between group" data-aos="fade-up">
-                    <div class="flex items-center space-x-8">
-                        <span class="text-slate-200 group-hover:text-emerald-200 text-4xl font-bold transition">03</span>
-                        <h4 class="text-2xl font-bold text-slate-800">Bank Audits</h4>
+                    <div class="flex items-center space-x-6 md:space-x-8">
+                        <span class="text-slate-100 group-hover:text-emerald-100 text-4xl md:text-6xl font-bold transition">03</span>
+                        <h4 class="text-xl md:text-2xl font-bold text-slate-800">Bank Audits</h4>
                     </div>
-                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0">Precision statutory and concurrent audits for financial institutions.</p>
-                </div>
-
-                <div class="service-hover-card py-10 flex flex-col md:flex-row md:items-center justify-between group" data-aos="fade-up">
-                    <div class="flex items-center space-x-8">
-                        <span class="text-slate-200 group-hover:text-emerald-200 text-4xl font-bold transition">04</span>
-                        <h4 class="text-2xl font-bold text-slate-800">Project Finance</h4>
-                    </div>
-                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0">CMA data modeling and strategic capital procurement assistance.</p>
-                </div>
-
-                <div class="service-hover-card py-10 flex flex-col md:flex-row md:items-center justify-between group" data-aos="fade-up">
-                    <div class="flex items-center space-x-8">
-                        <span class="text-slate-200 group-hover:text-emerald-200 text-4xl font-bold transition">05</span>
-                        <h4 class="text-2xl font-bold text-slate-800">Accounting</h4>
-                    </div>
-                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0">Detailed bookkeeping and financial statement management.</p>
+                    <p class="text-slate-500 md:max-w-md mt-4 md:mt-0 text-sm md:text-base">Precision statutory and concurrent audits for financial institutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-slate-900 text-white">
+    <section id="contact" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20">
+            <div class="grid lg:grid-cols-2 gap-16">
                 <div data-aos="fade-right">
-                    <h2 class="serif text-5xl mb-8 leading-tight">Start your financial <br><span class="text-emerald-500 italic">metamorphosis.</span></h2>
-                    <p class="text-slate-400 text-lg mb-12">Visit our office or reach out digitally for a confidential consultation.</p>
-                    
-                    <div class="space-y-8">
-                        <div class="flex items-center space-x-6">
-                            <div class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center text-emerald-500"><i class="fas fa-phone"></i></div>
-                            <span class="text-xl font-bold">+91 98980 89964</span>
-                        </div>
-                        <div class="flex items-center space-x-6">
-                            <div class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center text-emerald-500"><i class="fas fa-envelope"></i></div>
-                            <span class="text-xl font-bold">cakomal4@yahoo.com</span>
-                        </div>
+                    <h2 class="serif text-4xl md:text-5xl mb-6">Start your financial <br><span class="text-emerald-500 italic">metamorphosis.</span></h2>
+                    <p class="text-slate-400 mb-10">Reach out digitally for a confidential consultation.</p>
+                    <div class="space-y-6">
+                        <p class="flex items-center space-x-4"><i class="fas fa-phone text-emerald-500"></i> <span>+91 98980 89964</span></p>
+                        <p class="flex items-center space-x-4"><i class="fas fa-envelope text-emerald-500"></i> <span>cakomal4@yahoo.com</span></p>
                     </div>
                 </div>
-
-                <div class="bg-white p-10 rounded-3xl" data-aos="fade-left">
-                    <form action="#" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Name" class="w-full bg-slate-50 border-none p-5 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500">
-                            <input type="email" placeholder="Email" class="w-full bg-slate-50 border-none p-5 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500">
-                        </div>
-                        <input type="tel" placeholder="Mobile" class="w-full bg-slate-50 border-none p-5 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500">
-                        <textarea rows="4" placeholder="Message" class="w-full bg-slate-50 border-none p-5 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-                        <button class="w-full cta-premium py-5 rounded-xl font-bold uppercase tracking-widest hover:scale-[1.02] transition shadow-2xl">Send Inquiry</button>
+                <div class="bg-white p-8 md:p-10 rounded-3xl" data-aos="fade-left">
+                    <form action="#" class="space-y-4">
+                        <input type="text" placeholder="Name" class="w-full bg-slate-50 border-none p-4 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500">
+                        <input type="email" placeholder="Email" class="w-full bg-slate-50 border-none p-4 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500">
+                        <textarea rows="3" placeholder="Message" class="w-full bg-slate-50 border-none p-4 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                        <button class="w-full cta-premium py-4 rounded-xl font-bold uppercase tracking-widest text-xs">Send Inquiry</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="New-CA-logo.webp" alt="CA Logo" class="h-10">
-                        <span class="text-2xl font-extrabold text-slate-900 tracking-tighter">DRKG & CO.</span>
-                    </div>
-                    <p class="text-sm text-slate-400 font-bold uppercase tracking-widest">103, Corporate Avenue, Nanpura, Surat-395001</p>
+    <footer class="py-12 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <img src="New-CA-logo.webp" alt="CA Logo" class="h-10 mx-auto md:mx-0 mb-4">
+                    <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em]">© 2026 DRKG & Co. | ICAI Registered</p>
                 </div>
-                
-                <div class="flex flex-col md:items-end text-right">
-                    <div class="flex space-x-8 mb-4 font-bold text-slate-500 text-xs uppercase tracking-widest">
-                        <a href="#about" class="hover:text-emerald-600 transition">About</a>
-                        <a href="#services" class="hover:text-emerald-600 transition">Services</a>
-                        <a href="https://wa.me/919898089964" class="text-emerald-600">WhatsApp</a>
-                    </div>
-                    <p class="text-[10px] text-slate-300 uppercase italic max-w-sm">Disclaimer: In accordance with ICAI guidelines, this site is purely for information and not for solicitation.</p>
-                </div>
-            </div>
-            <div class="mt-20 pt-8 border-t border-slate-50 flex justify-between items-center">
-                <p class="text-xs font-bold text-slate-400">&copy; 2026 DRKG & Co. Chartered Accountants</p>
-                <div class="flex space-x-4 text-slate-300">
-                    <i class="fab fa-linkedin hover:text-emerald-600 cursor-pointer transition"></i>
-                    <i class="fab fa-twitter hover:text-emerald-600 cursor-pointer transition"></i>
+                <div class="flex space-x-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    <a href="https://wa.me/919898089964" class="text-emerald-600">WhatsApp</a>
+                    <a href="tel:+919898089964">Call Now</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
