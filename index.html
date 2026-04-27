@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRKG & Co. | Premium Financial Consultancy</title>
+    <title>DRKG & Co. | Premium Financial Architecture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,11 +40,19 @@
             background: linear-gradient(135deg, var(--ca-blue) 0%, #0d2b3e 100%);
             box-shadow: 0 10px 30px rgba(26, 82, 118, 0.3);
         }
+
+        .floating-wa {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body>
 
-    <header class="fixed w-full z-50 px-2 md:px-10 pt-4">
+    <header class="fixed w-full z-50 px-3 md:px-10 pt-4">
         <nav class="nav-glass max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2 md:space-x-4 shrink-0">
                 <img src="New-CA-logo.webp" alt="CA Logo" class="h-8 md:h-12 w-auto shrink-0">
@@ -84,7 +92,7 @@
             <div class="relative mt-12 lg:mt-0" data-aos="zoom-in" data-aos-duration="1200">
                 <img src="komal.jpg" alt="CA Komal Bhavnagari" class="rounded-br-[100px] shadow-2xl h-[400px] md:h-[600px] w-full object-cover">
                 <div class="absolute -bottom-6 -left-4 bg-white p-6 shadow-2xl rounded-2xl border border-slate-50">
-                    <h3 class="serif text-xl text-slate-900 leading-none">Komal Bhavnagari</h3>
+                    <h3 class="serif text-xl text-slate-900">Komal Bhavnagari</h3>
                     <p class="text-emerald-600 font-bold text-[9px] uppercase tracking-widest mt-2">Founder • F.C.A. • LL.B.</p>
                 </div>
             </div>
@@ -145,24 +153,45 @@
     <section id="contact" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
             <div>
-                <h2 class="serif text-4xl mb-6">Secure your <span class="text-emerald-500 italic">legacy.</span></h2>
+                <h2 class="serif text-4xl mb-6">Start your financial <br><span class="text-emerald-500 italic">metamorphosis.</span></h2>
                 <div class="space-y-4 text-slate-400">
-                    <p><i class="fas fa-envelope mr-3"></i> cakomal4@yahoo.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 98980 89964</p>
+                    <p><i class="fas fa-envelope mr-3 text-emerald-500"></i> cakomal4@yahoo.com</p>
+                    <p><i class="fas fa-phone mr-3 text-emerald-500"></i> +91 98980 89964</p>
+                    <p><i class="fas fa-map-marker-alt mr-3 text-emerald-500"></i> Surat, Gujarat, India</p>
                 </div>
             </div>
             <form class="space-y-4">
-                <input type="text" placeholder="Name" class="w-full bg-slate-800 border-none p-4 rounded-xl text-white outline-none">
-                <textarea rows="3" placeholder="Message" class="w-full bg-slate-800 border-none p-4 rounded-xl text-white outline-none"></textarea>
-                <button class="w-full bg-emerald-600 py-4 rounded-xl font-bold uppercase tracking-widest text-xs">Send Inquiry</button>
+                <input type="text" placeholder="Name" class="w-full bg-slate-800 border-none p-4 rounded-xl text-white outline-none focus:ring-2 focus:ring-emerald-500">
+                <input type="tel" placeholder="Mobile" class="w-full bg-slate-800 border-none p-4 rounded-xl text-white outline-none focus:ring-2 focus:ring-emerald-500">
+                <textarea rows="3" placeholder="Message" class="w-full bg-slate-800 border-none p-4 rounded-xl text-white outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+                <button class="w-full bg-emerald-600 py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-emerald-700 transition">Send Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 bg-white text-center">
-        <img src="New-CA-logo.webp" alt="CA Logo" class="h-10 mx-auto mb-4">
-        <p class="text-[10px] text-slate-400 uppercase tracking-widest">© 2026 DRKG & Co. | ICAI Registered</p>
+    <footer class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="New-CA-logo.webp" alt="CA Logo" class="h-12 mx-auto mb-6">
+            <h4 class="text-xl font-extrabold text-slate-900 mb-2">DRKG & CO.</h4>
+            <div class="flex justify-center space-x-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-8">
+                <a href="#about" class="hover:text-emerald-600 transition">About</a>
+                <a href="#services" class="hover:text-emerald-600 transition">Services</a>
+                <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                <p class="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest leading-relaxed">
+                    Disclaimer: This website is for informational purposes only and not intended for solicitation or advertising, in accordance with the guidelines issued by the Institute of Chartered Accountants of India (ICAI).
+                </p>
+            </div>
+            
+            <p class="mt-10 text-[10px] font-bold text-slate-300 uppercase tracking-widest">&copy; 2026 DRKG & Co. | All Rights Reserved</p>
+        </div>
     </footer>
+
+    <a href="https://wa.me/919898089964" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 floating-wa">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>AOS.init({ duration: 1000, once: true });</script>
